@@ -10,6 +10,7 @@ const requestHandler = (req, res) => {
         res.write('</html>');
         return res.end();
     }
+
     if (url === '/message' && method === 'POST') {
         const body = [];
         req.on('data', (chunk) => {
@@ -26,6 +27,7 @@ const requestHandler = (req, res) => {
             });
         });
     } 
+    
     res.setHeader('Content-Type', 'text/html');
     res.write('<html>');
     res.write('<head><title>My First Page</title></head>');
